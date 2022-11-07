@@ -51,6 +51,7 @@ figcaption {
   font-family: 'Raleway', sans-serif;
   display: grid;
   grid-template-columns: 1fr 2.5fr;
+  line-height: 25px;
 }
 
 .recipe-img {
@@ -72,7 +73,7 @@ h3 {
   text-transform: capitalize;
 }
 
-.recipe-description > p {
+p {
   font-size: 20px;
   font-weight: normal;
 }
@@ -97,3 +98,18 @@ h3 {
   font-size: 20px;
   font-weight: normal;
 }
+
+.recipe-steps {
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  margin: 20px 20px 0px;
+  padding: 5px 20px;
+  flex: 50%;
+}
+
+.recipe-steps > ol {
+  font-size: 20px;
+  font-weight: normal;
+}
+
