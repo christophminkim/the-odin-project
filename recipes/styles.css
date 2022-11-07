@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Cabin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
 
 header {
   text-align: center;
 }
 
-h1 {
+.landing-header {
   font-family: 'Amatic SC', cursive;
   font-size: 62px;
   text-transform: capitalize;
+}
+
+.recipe-header {
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-weight: normal;
 }
 
 .cards-container {
@@ -36,4 +42,58 @@ figcaption {
 
 .cards:hover {
   transform: scale(1.05);
+}
+
+.recipe {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  font-family: 'Raleway', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+}
+
+.recipe-img {
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.recipe-description {
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  margin: 0px 20px 0px;
+  padding: 5px 20px;
+  flex: 50%;
+}
+
+h3 {
+  font-size: 23px;
+  text-transform: capitalize;
+}
+
+.recipe-description > p {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.recipe-description > a {
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.recipe-ingredients {
+  margin: 20px;
+  background-color: rgb(255, 245, 226);
+  border-radius: 10px;
+  margin-left: 30px;
+  padding: 5px 20px;
+}
+
+.recipe-ingredients > ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: normal;
 }
