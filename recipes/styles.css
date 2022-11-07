@@ -85,10 +85,9 @@ p {
 }
 
 .recipe-ingredients {
-  margin: 20px;
+  margin: 20px 20px 0px 30px;
   background-color: rgb(255, 245, 226);
   border-radius: 10px;
-  margin-left: 30px;
   padding: 5px 20px;
 }
 
