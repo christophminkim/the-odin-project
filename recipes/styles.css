@@ -30,6 +30,10 @@ figcaption {
 
 .cards {
   margin: 0px 5px 30px;
+  box-shadow: 0px 3px 10px gray;
+  transition: all 0.2s ease-in-out;
 }
 
-
+.cards:hover {
+  transform: scale(1.05);
+}
