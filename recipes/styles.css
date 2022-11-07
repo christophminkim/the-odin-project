@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 62px;
+  text-transform: capitalize;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.cards {
+  margin: 0px 5px 30px;
+}
+
+
