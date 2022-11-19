@@ -6,6 +6,12 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
 }
 
 a {
@@ -42,8 +48,8 @@ a {
 
 .navbar-item-container > li {
   list-style: none;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 25px;
+  /* margin-right: 10px; */
 }
 
 .navbar-item-container {
@@ -90,7 +96,8 @@ a {
 button:hover {
   cursor: pointer;
   transition: 0.5s;
-  background-color: #236be0;
+  background-color: #f9faf8;
+  color: #3882f6;
 }
 
 .hero-image {
@@ -102,7 +109,113 @@ button:hover {
   justify-content: center;
 }
 
+.content-container {
+  padding-bottom: 100px;
+}
+
+.content-container > h2 {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #1f2937;
+  text-align: center;
+  padding: 20px;
+}
+
+.subtext-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.subtext-container {
+  text-align: center;
+  margin: 25px;
+}
+
+.subtext-container > div {
+  display: grid;
+  width: 157px;
+  height: 157px;
+  border: solid;
+  border-radius: 15px;
+  border-width: 4px;
+  border-color: #3882f6;
+}
+
+.subtext-container > p {
+  font-size: 18px;
+  color: grey;
+  margin-top: 7px;
+  width: 165px;
+}
+
+.quote-container {
+  background-color: #e5e7eb;
+  padding-top: 120px;
+  justify-content: center;
+}
+
+#quote {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 300;
+  color: #1f2937;
+  width: 810px;
+  padding: 0 107px 0;
+  margin-bottom: 0;
+}
+
+#quote-author {
+  margin-top: 0;
+  padding-bottom: 110px;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: end;
+  padding-right: 150px;
+}
+
+.cta-container {
+  background-color: #3882f6;
+  margin: 100px 200px;
+  color: #f9faf8;
+  padding: 50px 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cta-text-container > h3 {
+  font-size: 23px;
+  margin: 0;
+}
+
+.cta-text-container > p {
+  font-size: 18px;
+  margin: 2px 0 0;
+  color: #e5e7eb;
+}
+
+#cta-button {
+  border-radius: 10px;
+  border: solid;
+  border-color: #f9faf8;
+  background-color: #3882f6;
+  border-width: 2px;
+  padding: 0px 35px;
+  font-size: 18px;
+  color: #f9faf8;
+  font-weight: 500;
+}
+
+#cta-button:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f9faf8;
+  color: #3882f6;
+}
+
 footer {
+  height: 105px;
+  margin-top: -50px;
   background-color: #1f2937;
 }
 
