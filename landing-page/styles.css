@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.side-padding {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.hero-container {
+  background-color: #1f2937;
+  margin: 0;
+}
+
+#header-logo {
+  font-size: 24px;
+  color: #f9faf8;
+  font-weight: bold;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.navbar-item-container > li > a {
+  font-size: 18px;
+  color: #c4c5c8;
+}
+
+.navbar-item-container > li {
+  list-style: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-item-container {
+  display: flex;
+}
+
+.hero-content-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-bottom: 140px;
+  padding-top: 110px;
+}
+
+.hero-text {
+  padding-right: 46px;
+}
+
+.hero-text > h1 {
+  font-size: 48px;
+  font-weight: bolder;
+  color: #f9faf8;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero-text > p {
+  font-size: 18px;
+  color: #c4c5c8;
+  margin-top: 0;
+}
+
+.hero-text > button {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: #3882f6;
+  color: #f9faf8;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 32px;
+  text-align: center;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #236be0;
+}
+
+.hero-image {
+  background-color: rgb(118, 118, 124);
+  color: #c4c5c8;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: #1f2937;
+}
+
+footer > p {
+  font-size: 18px;
+  color: #c4c5c8;
+  padding: 40px;
+  text-align: center;
+}
