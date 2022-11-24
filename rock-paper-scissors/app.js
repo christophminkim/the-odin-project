@@ -11,10 +11,17 @@ addEventListener('DOMContentLoaded', () => {
   choiceBtns.forEach((btn) => {
     const player = btn.textContent;
     btn.addEventListener('click', () => {
-      if (score.player > 5 || score.computer > 5) score.player = score.computer = 0;
       if (player === 'Rock') game(player, getComputerChoice());
       else if (player === 'Paper') game(player, getComputerChoice());
       else game(player, getComputerChoice());
+
+      if (score.player === 5) {
+        score.player = 0;
+        score.computer = 0;
+      } else if (score.computer === 5) {
+        score.player = 0;
+        score.player = score.computer = 0;
+      }
     });
   });
 
