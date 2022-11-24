@@ -1,4 +1,16 @@
 addEventListener('DOMContentLoaded', () => {
+  const choiceBtns = document.querySelectorAll('.choice-btns');
+  choiceBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (btn.textContent === 'Rock') {
+        console.log(playRound(btn.textContent, getComputerChoice()));
+      } else if (btn.textContent === 'Paper') {
+        console.log(playRound(btn.textContent, getComputerChoice()));
+      } else {
+        console.log(playRound(btn.textContent, getComputerChoice()));
+      }
+    });
+  });
   function getComputerChoice() {
     const choice = ['ROCK', 'PAPER', 'SCISSORS'];
     const random = Math.floor(Math.random() * choice.length);
@@ -20,20 +32,10 @@ addEventListener('DOMContentLoaded', () => {
     else return 'PLAY THE GAME CORRECTLY';
   }
 
-  const player = prompt('Rock, paper, or scissors?');
-
-  function game() {
-    let score = {};
-    for (let i = 0; i < 5; i++) {
-      const result = playRound(player, getComputerChoice());
-      console.log(result);
-      if (result === 'YOU WIN') score.player ? (score.player += 1) : (score.player = 1);
-      if (result === 'YOU LOSE') score.computer ? (score.computer += 1) : (score.computer = 1);
-    }
-    if (score.player === score.computer) return 'WINNER: NO ONE';
-    else if (score.player > score.computer) return 'WINNER: PLAYER';
-    else return 'WINNER: COMPUTER';
-  }
-
-  console.log(game());
+  // function game() {
+  //   let score = {};
+  //   if (score.player === score.computer) return 'WINNER: NO ONE';
+  //   else if (score.player > score.computer) return 'WINNER: PLAYER';
+  //   else return 'WINNER: COMPUTER';
+  // }
 });
