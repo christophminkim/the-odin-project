@@ -1,17 +1,23 @@
 addEventListener('DOMContentLoaded', () => {
   const choiceBtns = document.querySelectorAll('.choice-btns');
-  const resultDiv = document.querySelector('.results');
+  const results = document.querySelector('.results');
+  const scores = document.querySelector('.scores');
+
+  const score = {
+    player: 0,
+    computer: 0,
+  };
+
   choiceBtns.forEach((btn) => {
+    const player = btn.textContent;
     btn.addEventListener('click', () => {
-      if (btn.textContent === 'Rock') {
-        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
-      } else if (btn.textContent === 'Paper') {
-        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
-      } else {
-        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
-      }
+      if (score.player > 5 || score.computer > 5) score.player = score.computer = 0;
+      if (player === 'Rock') game(player, getComputerChoice());
+      else if (player === 'Paper') game(player, getComputerChoice());
+      else game(player, getComputerChoice());
     });
   });
+
   function getComputerChoice() {
     const choice = ['ROCK', 'PAPER', 'SCISSORS'];
     const random = Math.floor(Math.random() * choice.length);
@@ -33,10 +39,18 @@ addEventListener('DOMContentLoaded', () => {
     else return 'PLAY THE GAME CORRECTLY';
   }
 
-  // function game() {
-  //   let score = {};
-  //   if (score.player === score.computer) return 'WINNER: NO ONE';
-  //   else if (score.player > score.computer) return 'WINNER: PLAYER';
-  //   else return 'WINNER: COMPUTER';
-  // }
+  function game(player, computer) {
+    const result = playRound(player, computer);
+
+    if (result === 'YOU WIN') {
+      score.player += 1;
+      scores.textContent = `Player: ${score.player} --- Computer: ${score.computer}`;
+    } else if (result === 'YOU LOSE') {
+      score.computer += 1;
+      scores.textContent = `Player: ${score.player} --- Computer: ${score.computer}`;
+    }
+
+    if (score.player === 5) results.textContent = 'YOU WIN';
+    else if (score.computer === 5) results.textContent = 'YOU LOSE';
+  }
 });
