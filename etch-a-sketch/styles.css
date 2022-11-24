@@ -1,0 +1,16 @@
+.square-container {
+  display: grid;
+  grid-template-columns: repeat(16, 22px);
+  justify-content: center;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  border: solid;
+  border-width: 1px;
+}
+
+.square:hover {
+  background-color: black;
+}
