@@ -1,13 +1,14 @@
 addEventListener('DOMContentLoaded', () => {
   const choiceBtns = document.querySelectorAll('.choice-btns');
+  const resultDiv = document.querySelector('.results');
   choiceBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       if (btn.textContent === 'Rock') {
-        console.log(playRound(btn.textContent, getComputerChoice()));
+        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
       } else if (btn.textContent === 'Paper') {
-        console.log(playRound(btn.textContent, getComputerChoice()));
+        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
       } else {
-        console.log(playRound(btn.textContent, getComputerChoice()));
+        resultDiv.textContent = playRound(btn.textContent, getComputerChoice());
       }
     });
   });
