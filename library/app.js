@@ -17,6 +17,12 @@ const myLibrary = [
     pages: 3,
     read: false,
   },
+  {
+    title: 'Test Four',
+    author: 'Tester Choi',
+    pages: 4,
+    read: false,
+  },
 ];
 
 function Book(title, author, pages, read) {
@@ -42,7 +48,7 @@ function addBookToLibrary() {
     pages.textContent = myLibrary[i].pages;
     read.textContent = myLibrary[i].read;
 
-    book.append(title, pages, read);
+    book.append(title, author, pages, read);
     books.appendChild(book);
   }
 }
