@@ -53,6 +53,11 @@ function addBookToLibrary() {
   }
 }
 
+const addBook = document.querySelector('.add-book');
+addBook.addEventListener('click', () => {
+  
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   addBookToLibrary();
 });
