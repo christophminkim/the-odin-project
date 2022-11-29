@@ -17,12 +17,6 @@ const myLibrary = [
     pages: 3,
     read: false,
   },
-  {
-    title: 'Test Four',
-    author: 'Tester Choi',
-    pages: 4,
-    read: false,
-  },
 ];
 
 function Book(title, author, pages, read) {
@@ -32,7 +26,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary() {
+function renderBooks() {
   const books = document.querySelector('.books-container');
 
   for (let i = 0; i < myLibrary.length; i++) {
@@ -53,11 +47,40 @@ function addBookToLibrary() {
   }
 }
 
-const addBook = document.querySelector('.add-book');
-addBook.addEventListener('click', () => {
-  
-})
+function addBooks() {
+  const formContainer = document.querySelector('.form-container');
+  const addBook = document.querySelector('.add-book');
+  const submitForm = document.querySelector('.submit-form');
+  const cancelForm = document.querySelector('.cancel-form');
+  const formInputTexts = document.querySelectorAll('.form-inputs > input');
+
+  addBook.addEventListener('click', () => {
+    formContainer.classList.toggle('open-form');
+  });
+
+  submitForm.addEventListener('click', () => {
+    const book = {};
+
+    formInputTexts.forEach((input) => {
+      input.value !== 'read' ? (book[input.name] = input.value) : (book[input.name] = input.checked);
+    });
+
+    const newBook = new Book(book.title, book.author, book.pages, book.read);
+    console.log(newBook);
+
+    
+  });
+
+  cancelForm.addEventListener('click', () => {
+    formContainer.classList.toggle('open-form');
+    formInputTexts.forEach((input) => {
+      input.value = '';
+      if (input.type === 'checkbox') input.checked = false;
+    });
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  addBookToLibrary();
+  renderBooks();
+  addBooks();
 });
