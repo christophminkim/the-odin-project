@@ -1,4 +1,5 @@
 const myLibrary = [];
+let i = 1;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -19,15 +20,22 @@ function renderBooks() {
     const author = document.createElement('p');
     const pages = document.createElement('p');
     const read = document.createElement('p');
+    const remove = document.createElement('button');
 
     book.className = 'books';
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
     pages.textContent = myLibrary[i].pages;
     read.textContent = myLibrary[i].read;
+    remove.textContent = 'Remove';
+    remove.id = `remove-${i++}`;
 
-    book.append(title, author, pages, read);
+    book.append(title, author, pages, read, remove);
     books.appendChild(book);
+
+    remove.addEventListener('click', () => {
+      books.removeChild(book);
+    });
   }
 }
 
@@ -39,15 +47,23 @@ function renderNewBook() {
   const author = document.createElement('p');
   const pages = document.createElement('p');
   const read = document.createElement('p');
+  const remove = document.createElement('button');
 
   book.className = 'books';
   title.textContent = myLibrary[myLibrary.length - 1].title;
   author.textContent = myLibrary[myLibrary.length - 1].author;
   pages.textContent = myLibrary[myLibrary.length - 1].pages;
   read.textContent = myLibrary[myLibrary.length - 1].read;
+  remove.textContent = 'Remove';
+  remove.id = `remove-${i++}`;
 
-  book.append(title, author, pages, read);
+  book.append(title, author, pages, read, remove);
   books.appendChild(book);
+
+  const currentRemove = document.getElementById(`remove-${i - 1}`);
+  currentRemove.addEventListener('click', () => {
+    books.removeChild(currentRemove.parentNode);
+  });
 }
 
 function addBooks() {
