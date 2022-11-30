@@ -1,23 +1,4 @@
-const myLibrary = [
-  {
-    title: 'Test',
-    author: 'Tester Kim',
-    pages: 1,
-    read: true,
-  },
-  {
-    title: 'Test Two',
-    author: 'Tester Chin',
-    pages: 2,
-    read: false,
-  },
-  {
-    title: 'Test Three',
-    author: 'Tester Jin',
-    pages: 3,
-    read: false,
-  },
-];
+const myLibrary = [];
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -25,6 +6,9 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
+
+const fruitByTheFoot = new Book('How to eat a fruit by the foot', 'Christopher Kim', 1, false);
+myLibrary.push(fruitByTheFoot);
 
 function renderBooks() {
   const books = document.querySelector('.books-container');
@@ -50,7 +34,7 @@ function renderBooks() {
 function renderNewBook() {
   const books = document.querySelector('.books-container');
   const book = document.createElement('div');
-  
+
   const title = document.createElement('h2');
   const author = document.createElement('p');
   const pages = document.createElement('p');
@@ -85,22 +69,27 @@ function addBooks() {
 
     const newBook = new Book(book.title, book.author, book.pages, book.read);
     myLibrary.push(newBook);
+    renderNewBook();
 
     formContainer.classList.toggle('open-form');
     formInputTexts.forEach((input) => {
       input.value = '';
-      if (input.type === 'checkbox') input.checked = false;
+      if (input.type === 'checkbox') {
+        input.checked = false;
+        input.value = 'read';
+      }
     });
-
-    renderNewBook();
   });
 
   cancelForm.addEventListener('click', () => {
     formContainer.classList.toggle('open-form');
-  
+
     formInputTexts.forEach((input) => {
       input.value = '';
-      if (input.type === 'checkbox') input.checked = false;
+      if (input.type === 'checkbox') {
+        input.checked = false;
+        input.value = 'read';
+      }
     });
   });
 }
