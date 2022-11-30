@@ -47,6 +47,25 @@ function renderBooks() {
   }
 }
 
+function renderNewBook() {
+  const books = document.querySelector('.books-container');
+  const book = document.createElement('div');
+  
+  const title = document.createElement('h2');
+  const author = document.createElement('p');
+  const pages = document.createElement('p');
+  const read = document.createElement('p');
+
+  book.className = 'books';
+  title.textContent = myLibrary[myLibrary.length - 1].title;
+  author.textContent = myLibrary[myLibrary.length - 1].author;
+  pages.textContent = myLibrary[myLibrary.length - 1].pages;
+  read.textContent = myLibrary[myLibrary.length - 1].read;
+
+  book.append(title, author, pages, read);
+  books.appendChild(book);
+}
+
 function addBooks() {
   const formContainer = document.querySelector('.form-container');
   const addBook = document.querySelector('.add-book');
@@ -60,19 +79,25 @@ function addBooks() {
 
   submitForm.addEventListener('click', () => {
     const book = {};
-
     formInputTexts.forEach((input) => {
       input.value !== 'read' ? (book[input.name] = input.value) : (book[input.name] = input.checked);
     });
 
     const newBook = new Book(book.title, book.author, book.pages, book.read);
-    console.log(newBook);
+    myLibrary.push(newBook);
 
-    
+    formContainer.classList.toggle('open-form');
+    formInputTexts.forEach((input) => {
+      input.value = '';
+      if (input.type === 'checkbox') input.checked = false;
+    });
+
+    renderNewBook();
   });
 
   cancelForm.addEventListener('click', () => {
     formContainer.classList.toggle('open-form');
+  
     formInputTexts.forEach((input) => {
       input.value = '';
       if (input.type === 'checkbox') input.checked = false;
