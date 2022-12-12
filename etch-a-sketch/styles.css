@@ -20,3 +20,7 @@
 .square {
   border: solid;
 }
+
+.square:hover {
+  background-color: black;
+}
