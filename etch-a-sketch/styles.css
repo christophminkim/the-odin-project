@@ -17,6 +17,6 @@
   margin: 1rem;
 }
 
-.square:active {
+.square:hover {
   background-color: black;
 }
