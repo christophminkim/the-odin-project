@@ -19,3 +19,5 @@ class Calculator {
     return operator(num1, num2);
   };
 }
+
+export default Calculator;
