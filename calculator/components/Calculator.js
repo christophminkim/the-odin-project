@@ -14,4 +14,8 @@ class Calculator {
   divide = (num1, num2) => {
     return num1 / num2;
   };
+
+  operate = (operator, num1, num2) => {
+    return operator(num1, num2);
+  };
 }
