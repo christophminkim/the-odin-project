@@ -24,7 +24,7 @@ class Calculator {
     const allButtons = document.querySelectorAll('.calc-buttons');
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        console.log(button.textContent);
+        result.textContent = button.textContent;
       });
     });
   };
