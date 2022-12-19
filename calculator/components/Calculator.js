@@ -26,10 +26,14 @@ class Calculator {
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
         if (button.textContent !== 'C' || button.textContent !== '=') {
-          clickResult += button.textContent;
+          if (button.textContent !== '=') clickResult += button.textContent;
 
           if (button.textContent === 'C') clickResult = '';
-          // if (button.textContent === '=')
+          if (button.textContent === '=') {
+            const operators = ['+', '-', '*', '/'];
+            const splitResult = clickResult.split(/[+\-*/]/);
+            console.log(splitResult);
+          }
         }
 
         result.textContent = clickResult;
