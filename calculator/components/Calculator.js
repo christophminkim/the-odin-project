@@ -23,7 +23,9 @@ class Calculator {
     const result = document.querySelector('.calc-result');
     const allButtons = document.querySelectorAll('.calc-buttons');
     allButtons.forEach((button) => {
-      console.log(button.textContent);
+      button.addEventListener('click', () => {
+        console.log(button.textContent);
+      });
     });
   };
 }
