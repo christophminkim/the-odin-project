@@ -22,9 +22,17 @@ class Calculator {
   displayInput = () => {
     const result = document.querySelector('.calc-result');
     const allButtons = document.querySelectorAll('.calc-buttons');
+    let clickResult = '';
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        result.textContent = button.textContent;
+        if (button.textContent !== 'C' || button.textContent !== '=') {
+          clickResult += button.textContent;
+
+          if (button.textContent === 'C') clickResult = '';
+          // if (button.textContent === '=')
+        }
+
+        result.textContent = clickResult;
       });
     });
   };
