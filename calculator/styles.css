@@ -10,16 +10,36 @@ body {
 }
 
 .calc-buttons {
-  background-color: aqua;
+  background-color: rgb(62, 188, 255);
   width: 7rem;
   height: 7rem;
   text-align: center;
   border-radius: 0.5rem;
+  border: none;
+  margin: 0.25rem;
+  font-size: 1.25rem;
 }
 
 .calc-buttons:hover {
-  background-color: rgb(0, 231, 231);
+  background-color: rgb(2, 166, 255);
   cursor: pointer;
 }
 
+.calc-result {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  background-color: rgb(139, 214, 255);
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  margin: 0.25rem;
+  font-size: 2rem;
+  grid-area: 1 / 1 / span 1 / span 3;
+}
 
+.calc-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
