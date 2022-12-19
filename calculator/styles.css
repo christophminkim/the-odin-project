@@ -6,4 +6,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5rem;
 }
+
+.calc-buttons {
+  background-color: aqua;
+  width: 7rem;
+  height: 7rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.calc-buttons:hover {
+  background-color: rgb(0, 231, 231);
+  cursor: pointer;
+}
+
+
