@@ -26,13 +26,18 @@ class Calculator {
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
         if (button.textContent !== 'C' || button.textContent !== '=') {
-          if (button.textContent !== '=') clickResult += button.textContent;
-
+          if (!/[+\-*/=C]/.test(button.textContent)) clickResult += button.textContent;
           if (button.textContent === 'C') clickResult = '';
-          if (button.textContent === '=') {
-            const operators = ['+', '-', '*', '/'];
-            const splitResult = clickResult.split(/[+\-*/]/);
-            console.log(splitResult);
+          if (button.textContent === '+') {
+            const firstNum = clickResult;
+            clickResult = '';
+            if (!/[+\-*/=C]/.test(button.textContent)) {
+              clickResult += button.textContent;
+              const secondNum = clickResult;
+              console.log('first: ', firstNum, 'second: ', secondNum);
+
+              // find out how to assign secondNum a value after clicking on an operator like '+'
+            }
           }
         }
 
