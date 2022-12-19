@@ -18,6 +18,14 @@ class Calculator {
   operate = (operator, num1, num2) => {
     return operator(num1, num2);
   };
+
+  displayInput = () => {
+    const result = document.querySelector('.calc-result');
+    const allButtons = document.querySelectorAll('.calc-buttons');
+    allButtons.forEach((button) => {
+      console.log(button.textContent);
+    });
+  };
 }
 
 export default Calculator;
