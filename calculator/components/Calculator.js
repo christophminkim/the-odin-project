@@ -15,31 +15,48 @@ class Calculator {
     return num1 / num2;
   };
 
-  operate = (operator, num1, num2) => {
-    return operator(num1, num2);
+  operate = (operator, args) => {
+    const splitArgs = args.split(' ');
+    console.log(splitArgs);
+    return operator(Number(splitArgs[0]), Number(splitArgs[1]));
   };
 
   displayInput = () => {
     const result = document.querySelector('.calc-result');
     const allButtons = document.querySelectorAll('.calc-buttons');
     let clickResult = '';
+    let calcNums = '';
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        if (button.textContent !== 'C' || button.textContent !== '=') {
-          if (!/[+\-*/=C]/.test(button.textContent)) clickResult += button.textContent;
-          if (button.textContent === 'C') clickResult = '';
-          if (button.textContent === '+') {
-            const firstNum = clickResult;
-            clickResult = '';
+        const calculate = () => {
+          if (button.textContent !== 'C' || button.textContent !== '=') {
             if (!/[+\-*/=C]/.test(button.textContent)) {
               clickResult += button.textContent;
-              const secondNum = clickResult;
-              console.log('first: ', firstNum, 'second: ', secondNum);
+              calcNums += button.textContent;
+              console.log(calcNums);
+            }
 
-              // find out how to assign secondNum a value after clicking on an operator like '+'
+            if (button.textContent === 'C') {
+              clickResult = '';
+              calcNums = '';
+              console.log('clear');
+            }
+
+            if (button.textContent === '+') {
+              clickResult = '';
+              calcNums += ' ';
+              console.log(calcNums);
+            }
+
+            if (button.textContent === '=') {
+              clickResult = this.operate(this.add, calcNums);
+              calcNums = '';
+              calcNums += clickResult;
             }
           }
-        }
+        };
+
+        calculate();
 
         result.textContent = clickResult;
       });
