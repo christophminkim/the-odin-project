@@ -26,6 +26,7 @@ class Calculator {
     const allButtons = document.querySelectorAll('.calc-buttons');
     let clickResult = '';
     let calcNums = '';
+    let mathOperator = '';
     allButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const calculate = () => {
@@ -45,11 +46,37 @@ class Calculator {
             if (button.textContent === '+') {
               clickResult = '';
               calcNums += ' ';
+              mathOperator = '+';
+              console.log(calcNums);
+            }
+
+            if (button.textContent === '-') {
+              clickResult = '';
+              calcNums += ' ';
+              mathOperator = '-';
+              console.log(calcNums);
+            }
+
+            if (button.textContent === '*') {
+              clickResult = '';
+              calcNums += ' ';
+              mathOperator = '*';
+              console.log(calcNums);
+            }
+
+            if (button.textContent === '/') {
+              clickResult = '';
+              calcNums += ' ';
+              mathOperator = '/';
               console.log(calcNums);
             }
 
             if (button.textContent === '=') {
-              clickResult = this.operate(this.add, calcNums);
+              if (mathOperator === '+') clickResult = this.operate(this.add, calcNums);
+              else if (mathOperator === '-') clickResult = this.operate(this.subtract, calcNums);
+              else if (mathOperator === '*') clickResult = this.operate(this.multiply, calcNums);
+              else if (mathOperator === '/') clickResult = this.operate(this.divide, calcNums);
+
               calcNums = '';
               calcNums += clickResult;
             }
